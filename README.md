@@ -1,16 +1,258 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आपका नाम - पोर्टफोलियो</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-<!--
-**aryan123n/aryan123n** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+        html {
+            scroll-behavior: smooth;
+        }
 
-Here are some ideas to get you started:
+        body {
+            background-color: #f5f5f5;
+        }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+        /* नेविगेशन बार */
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0077b6;
+        }
+
+        /* हीरो सेक्शन */
+        .hero {
+            padding: 150px 50px 100px;
+            text-align: center;
+            background: linear-gradient(45deg, #0077b6, #00b4d8);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: white;
+            color: #0077b6;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* प्रोजेक्ट्स सेक्शन */
+        .projects {
+            padding: 100px 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: #0077b6;
+        }
+
+        /* स्किल्स सेक्शन */
+        .skills {
+            padding: 100px 50px;
+            background: #f8f9fa;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #0077b6;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        /* कॉन्टैक्ट सेक्शन */
+        .contact {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* रेस्पॉन्सिव डिज़ाइन */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">आपका नाम</div>
+        <div class="nav-links">
+            <a href="#home">होम</a>
+            <a href="#projects">प्रोजेक्ट्स</a>
+            <a href="#skills">स्किल्स</a>
+            <a href="#contact">संपर्क</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>नमस्ते, मैं हूँ आपका नाम</h1>
+        <p>वेब डेवलपर और डिज़ाइनर</p>
+        <button class="cta-button">मेरे कार्य देखें</button>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="section-title">मेरे प्रोजेक्ट्स</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1" class="project-image">
+                <div class="project-info">
+                    <h3>प्रोजेक्ट 1</h3>
+                    <p>प्रोजेक्ट विवरण यहाँ लिखें</p>
+                </div>
+            </div>
+            <!-- और प्रोजेक्ट कार्ड जोड़ें -->
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">मेरी स्किल्स</h2>
+        <div class="skills-container">
+            <div class="skill-tag">HTML</div>
+            <div class="skill-tag">CSS</div>
+            <div class="skill-tag">JavaScript</div>
+            <!-- और स्किल्स जोड़ें -->
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">संपर्क करें</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="आपका नाम">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="आपका ईमेल">
+            </div>
+            <div class="form-group">
+                <textarea rows="5" placeholder="आपका संदेश"></textarea>
+            </div>
+            <button class="cta-button">संदेश भेजें</button>
+        </form>
+    </section>
+</body>
+</html>
+
